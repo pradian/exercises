@@ -1,0 +1,75 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+}
+section {
+  width: 100vw;
+  z-index: 0;
+}
+
+.first {
+  height: 55vh;
+  background-color: #3c31dd;
+  position: relative;
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wavy {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 100px;
+  text-align: center;
+}
+
+.wavy::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 100% 50%;
+  width: 55%;
+  height: 100%;
+  transform: translate(87%, 59%);
+  z-index: 2;
+}
+.wavy::after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-radius: 100% 50%;
+  width: 55%;
+  height: 100%;
+  background-color: #3c31dd;
+  transform: translate(-2%, 40%);
+  z-index: 1;
+}
+.second {
+  height: 45vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 50px;
+  padding-bottom: 20px;
+}
+.brands {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.brands img {
+  height: 50px;
+}
+.second p {
+  z-index: 3;
+}
