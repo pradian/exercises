@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script src="./assets/script.js" defer></script>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style></style>
+  </head>
+  <body>
+    <!-- Sign-up form start -->
+    <div class="content">
+      <div class="left__side">
+        <h1>Stay updated!</h1>
+
+        <p>Join 60,000+ product managers receiving monthly updates on:</p>
+        <ul class="list">
+          <li>Product discovery and building what matters</li>
+          <li>Measuring to ensure updates are a success</li>
+          <li>And much more!</li>
+        </ul>
+        <form action="">
+          <label for="email">Email address:</label>
+          <input type="email" placeholder="email@company.com" id="email" />
+        </form>
+        <button id="subscribe">Subscribe to monthly newsletter</button>
+      </div>
+      <div class="side__right">
+        <img src="./assets/images/illustration-sign-up-desktop.svg" alt="" />
+      </div>
+      <!-- Sign-up form end -->
+
+      <!-- Success message start -->
+      <div class="success hide" id="success">
+        Thanks for subscribing! A confirmation email has been sent to
+        ash@loremcompany.com. Please open it and click the button inside to
+        confirm your subscription.
+        <button>Dismiss message</button>
+      </div>
+    </div>
+    <!-- Success message end -->
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Alexandru Petre(GlocK)</a>.
+    </div>
+  </body>
+</html>
