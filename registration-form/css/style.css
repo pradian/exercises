@@ -109,8 +109,8 @@ body {
   border-bottom: 2px solid #123b79;
 }
 .register_form > input::placeholder, 
-login_form > input::placeholder{
-color: white;
+.login_form > input::placeholder{
+color: #fff
 } 
 .register_buttons {
   display: flex;
