@@ -109,11 +109,20 @@ body {
   border-bottom: 2px solid #123b79;
 }
 
-input::-webkit-input-placeholder{
-    color:#fff;
+::-webkit-input-placeholder {
+    color:red;
 }
-input:-moz-placeholder {
-    color:#fff;
+
+::-moz-placeholder {
+    color:red;
+}
+
+::-ms-placeholder {
+    color:red;
+}
+
+::placeholder {
+    color:red;
 }
 .register_buttons {
   display: flex;
