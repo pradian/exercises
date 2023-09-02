@@ -1,0 +1,160 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #3260a3;
+}
+
+.container {
+  width: 940px;
+  height: 600px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  background-color: lightblue;
+  overflow: hidden;
+}
+
+.container__left {
+  width: 470px;
+  background-image: url(../images/form-img.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.container__right {
+  width: 470px;
+  height: 600px;
+  background-color: #3d5983;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px;
+  font-size: 24px;
+  height: 70px;
+}
+
+.tabs button,
+.register_buttons button,
+.login_form button {
+  color: antiquewhite;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  width: 200px;
+  border-bottom: 2px solid transparent;
+}
+
+.tabs .active {
+  border-bottom: 2px solid transparent;
+  background-color: #fff;
+  border-radius: 8px;
+  color: #123b79;
+}
+
+.tabs button:hover {
+  border-bottom: 2px solid transparent;
+}
+
+.register_form,
+.login_form,
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+  height: 400px;
+}
+
+.register_form input,
+.login_form input {
+  padding: 5px;
+  font-size: 20px;
+  width: 98%;
+
+  border: 1px solid transparent;
+  border-bottom: 1px solid #fff;
+  background-color: transparent;
+  color: white;
+}
+
+.register_form > input:focus,
+.register_form > input:focus-visible,
+.register_form > input:focus-within,
+.register_form > input:active,
+.login_form > input:focus,
+.login_form > input:focus-visible,
+.login_form > input:focus-within,
+.login_form > input:active {
+  border: 1px solid transparent;
+  color: white;
+  outline: none;
+  border-bottom: 2px solid #123b79;
+}
+.register_buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.register_buttons button:hover,
+.login_form button:hover {
+  background-color: white;
+  color: #123b79;
+  border-radius: 8px;
+}
+.relative {
+  position: relative;
+  display: flex;
+  width: 98%;
+}
+.relative input[type="checkbox"] {
+  width: 40%;
+}
+.show-pwd {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  cursor: pointer;
+}
+.hide {
+  display: none;
+}
+
+@media screen and (max-width: 468px) {
+  .container__left {
+    display: none;
+  }
+  .container__right {
+    width: 100vw;
+  }
+  .tabs {
+    width: 370px;
+  }
+  .register_form input,
+  .login_form input {
+    width: 300px;
+  }
+  .tabs button,
+  .register_buttons button,
+  .login_form button {
+    width: 150px;
+  }
+}
