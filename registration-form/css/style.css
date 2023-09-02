@@ -108,7 +108,8 @@ body {
   outline: none;
   border-bottom: 2px solid #123b79;
 }
-::placeholder{
+::placeholder, 
+::-webkit-input-placeholder{
 color: #fff;
 } 
 .register_buttons {
