@@ -69,6 +69,7 @@ loginBtn.addEventListener("click", () => {
     } else {
       loginForm.classList.add("hide");
       logged.classList.remove("hide");
+      logged.innerHTML = `<h1>Welcome back ${key.firstName} ${key.lastName} </h1>`;
     }
   }
   loginEmail.value = "";
@@ -127,4 +128,5 @@ registerBtn.addEventListener("click", () => {
   confirmPassword.value = "";
   registerForm.classList.add("hide");
   registered.classList.remove("hide");
+  // registered.innerHTML = `<h1>Welcome  ${firstName.value} ${lastName.value} </h1>`;
 });
