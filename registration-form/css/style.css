@@ -51,7 +51,7 @@ body {
 .register_buttons button,
 .login_form button {
   color: antiquewhite;
-  background-color: transparent;
+  background-color: #3d5983;
   border: none;
   font-size: 24px;
   cursor: pointer;
@@ -91,7 +91,7 @@ body {
 
   border: 1px solid transparent;
   border-bottom: 1px solid #fff;
-  background-color: transparent;
+  background-color: #3d5983;
   color: white;
 }
 
@@ -108,10 +108,6 @@ body {
   outline: none;
   border-bottom: 2px solid #123b79;
 }
-::placeholder, 
-::-webkit-input-placeholder{
-color: #fff;
-} 
 .register_buttons {
   display: flex;
   justify-content: space-around;
@@ -140,6 +136,22 @@ color: #fff;
 }
 .hide {
   display: none;
+}
+.placeholder[placeholder] {
+  color: #ffffff;
+  opacity: 1;
+}
+.placeholder::placeholder {
+  color: #ffffff;
+  opacity: 1;
+}
+.placeholder::-webkit-input-placeholder {
+  color: #ffffff;
+  opacity: 1;
+}
+.placeholder::-ms-input-placeholder {
+  color: #ffffff;
+  opacity: 1;
 }
 
 @media screen and (max-width: 468px) {
