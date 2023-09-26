@@ -1,61 +1,33 @@
 const homepage = document.getElementById("homepage");
 const registrationForm = document.getElementById("registrationForm");
-const loginForm = document.getElementById("loginForm");
-const homeRegisterBtn = document.getElementById("homeRegisterBtn");
-const homeLoginBtn = document.getElementById("homeLoginBtn");
+const loginUsername = document.getElementById("loginUsername");
+const loginPwd = document.getElementById("loginPwd");
+const loginBtn = document.getElementById("loginBtn");
+const loggedIn = JSON.parse(localStorage.getItem("loggedIn")) || [];
+const users = JSON.parse(localStorage.getItem("users")) || [];
 
-homeRegisterBtn.addEventListener("click", () => {
-  homepage.classList.toggle("hidden");
-  registrationForm.classList.toggle("hidden");
-});
-
-homeLoginBtn.addEventListener("click", () => {
-  homepage.classList.toggle("hidden");
-  loginForm.classList.toggle("hidden");
-});
-
-const registrationUsername = document.getElementById("registrationUsername");
-const registrationFirstName = document.getElementById("registrationFirstName");
-const registrationLastName = document.getElementById("registrationLastName");
-const registrationEmail = document.getElementById("registrationEmail");
-const registrationAge = document.getElementById("registrationAge");
-const registrationPassword = document.getElementById("registrationPassword");
-const registrationConfirmPassword = document.getElementById(
-  "registrationConfirmPassword"
-);
-const registrationBtn = document.getElementById("registrationBtn");
-const registrationClearBtn = document.getElementById("registrationClearBtn");
-
-class User {
-  //   id: 0;
-  constructor(username, firstName, lastName, email, age, password) {
-    this.username = username;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.email = email;
-    this.age = age;
-    this.password = password;
-  }
+function setLocalStorage() {
+  localStorage.setItem("loggedIn", JSON.stringify(loggedIn));
 }
-
-registrationClearBtn.addEventListener("click", () => {
-  registrationUsername.value = "";
-  registrationFirstName.value = "";
-  registrationLastName.value = "";
-  registrationEmail.value = "";
-  registrationAge.value = "";
-  registrationPassword.value = "";
-  registrationConfirmPassword.value = "";
+console.log(users);
+console.log(loggedIn);
+if (loggedIn.length > 0) {
+  window.location.replace("home.html");
+}
+registrationForm.addEventListener("click", () => {
+  window.location.href = "register.html";
 });
 
-registrationBtn.addEventListener("click", () => {
-  let user = new User(
-    registrationUsername.value,
-    registrationFirstName.value,
-    registrationLastName.value,
-    registrationEmail.value,
-    registrationAge.value,
-    registrationPassword.value
+loginBtn.addEventListener("click", () => {
+  const user = users.find(
+    (user) =>
+      user.username === loginUsername.value && user.password === loginPwd.value
   );
-  console.log(user);
+  if (user) {
+    loggedIn.push(user.username);
+    setLocalStorage();
+    window.location.replace("home.html");
+  } else {
+    alert("Username or password is incorrect");
+  }
 });

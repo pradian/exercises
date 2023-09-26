@@ -26,139 +26,34 @@
           </div>
         </div>
         <div class="navigation__right hidden">
-          <p id="welcomeUser">Welcome user</p>
+          <p id="welcomeUser"></p>
           <button id="editProfile">Edit profile</button>
-          <button id="logout">Logout</button>
+          <button id="logoutBtn">Logout</button>
         </div>
       </div>
       <div class="main">
-        <div class="main__homepage hidden" id="homepage">
-          <h1>Shits web application</h1>
-          <h3>
-            Welcome to our platform! We're thrilled to have you here, and we
-            can't wait to offer you an amazing experience. Ready to get started?
-            Just choose your path:
-          </h3>
-          <div class="homepage-login">
-            <button id="homeLoginBtn">Login</button>
-            <button id="homeRegisterBtn">Register</button>
-          </div>
-          <p>
-            Select the option that suits you best, and let's begin this exciting
-            journey together!
-          </p>
-        </div>
-        <div class="main__login hidden" id="loginForm">
+        <div class="main__login" id="loginForm">
           <div>
-            <label for="loginUsername">Username</label>
-            <input type="text" placeholder="Username" id="loginUsername" />
-          </div>
-          <div>
-            <label for="loginPwd">Password</label>
-            <input type="password" placeholder="Password" id="loginPwd" />
-          </div>
-          <button id="loginBtn">Login</button>
-        </div>
-        <div class="main__registration" id="registrationForm">
-          <div>
-            <label for="registrationUsername">Username:</label>
+            <label for="loginUsername">Username:</label>
             <input
               type="text"
-              placeholder="Username"
-              id="registrationUsername"
+              placeholder="Enter your username"
+              id="loginUsername"
             />
-            <p>First name must have 6 character long</p>
           </div>
           <div>
-            <label for="registrationFirstName">First name:</label>
+            <label for="loginPwd">Password:</label>
             <input
-              type="text"
-              placeholder="First name"
-              id="registrationFirstName"
+              type="password"
+              placeholder="Enter your password"
+              id="loginPwd"
             />
-            <p>First name must have 6 character long</p>
           </div>
           <div>
-            <label for="registrationLastName">Last name:</label>
-            <input
-              type="text"
-              placeholder="Last name"
-              id="registrationLastName"
-            />
-            <p>First name must have 6 character long</p>
+            <button id="loginBtn">Login</button>
+            <button id="registrationForm">Register</button>
           </div>
-          <div>
-            <label for="registrationEmail">Email:</label>
-            <input type="text" placeholder="Email" id="registrationEmail" />
-          </div>
-          <div>
-            <label for="registrationAge">Age:</label>
-            <input
-              type="number"
-              placeholder="Age"
-              min="1"
-              max="65"
-              id="registrationAge"
-            />
-            <p>Your age must be between 18 and 65 years old</p>
-          </div>
-          <div>
-            <label for="registrationPassword">Password:</label>
-            <input
-              type="text"
-              placeholder="Password"
-              id="registrationPassword"
-            />
-            <p>Password must be at least 6 character long</p>
-          </div>
-          <div>
-            <label for="registrationConfirmPassword">Confirm password:</label>
-            <input
-              type="text"
-              placeholder="Confirm password"
-              id="registrationConfirmPassword"
-            />
-            <p>Both passwords must mach</p>
-          </div>
-          <div class="registration-buttons">
-            <button id="registrationBtn">Register</button>
-            <button id="registrationClearBtn">Clear</button>
-          </div>
-        </div>
-        <div class="main__shifts hidden">
-          <div class="search-shifts">
-            <input type="text" id="searchShifts" placeholder="Shift name" />
-            <input type="date" id="searchShiftStartDate" />
-            <input type="date" id="seatchShiftEndDate" />
-            <input type="button" value="Search" />
-          </div>
-          <table class="customTable">
-            <thead>
-              <tr>
-                <th>Shift name</th>
-                <th>Start date</th>
-                <th>End date</th>
-                <th>Hours worked</th>
-                <th>Wage per hour</th>
-                <th>Location</th>
-                <th>Total income</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Row 1, Cell 1</td>
-                <td>Row 1, Cell 2</td>
-                <td>Row 1, Cell 3</td>
-                <td>Row 1, Cell 4</td>
-                <td>Row 1, Cell 5</td>
-                <td>Row 1, Cell 6</td>
-                <td>Row 1, Cell 7</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="best-month" id="bestMonth">
-            <h1>Best month</h1>
-          </div>
+          <p>Forgot password? <a id="forgotPwd">Click here</a></p>
         </div>
       </div>
       <div class="footer">

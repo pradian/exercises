@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Petre Radian Alexandru" />
+    <title>Document</title>
+
+    <link
+      rel="shortcut icon"
+      href="./assets/images/fav.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <script src="./assets/scripts/home.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navigation">
+        <div class="navigation__left">
+          <h1>Shift app</h1>
+          <div class="logged-in" id="loggedIn">
+            <button id="myShits">Shifts</button>
+            <button id="newShift">New shift</button>
+            <button disabled>Button</button>
+          </div>
+        </div>
+        <div class="navigation__right">
+          <p id="welcomeUser"></p>
+          <button id="editProfile">Edit profile</button>
+          <button id="logoutBtn">Logout</button>
+        </div>
+      </div>
+      <div class="main">
+        <div class="main__shifts">
+          <div class="search-shifts">
+            <input type="text" id="searchShifts" placeholder="Shift name" />
+            <input type="date" id="searchShiftStartDate" />
+            <input type="date" id="seatchShiftEndDate" />
+            <input type="button" value="Search" />
+          </div>
+          <table class="customTable">
+            <thead>
+              <tr>
+                <th>Shift name</th>
+                <th>Start date</th>
+                <th>End date</th>
+                <th>Hours worked</th>
+                <th>Wage per hour</th>
+                <th>Location</th>
+                <th>Total income</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Row 1, Cell 1</td>
+                <td>Row 1, Cell 2</td>
+                <td>Row 1, Cell 3</td>
+                <td>Row 1, Cell 4</td>
+                <td>Row 1, Cell 5</td>
+                <td>Row 1, Cell 6</td>
+                <td>Row 1, Cell 7</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="best-month" id="bestMonth">
+            <h1>Best month</h1>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <h5>&copy; Shift application</h5>
+      </div>
+    </div>
+  </body>
+</html>
