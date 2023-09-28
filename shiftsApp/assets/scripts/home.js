@@ -41,14 +41,14 @@ showShifts.innerHTML = "";
 loggedInUser.shifts.forEach((shift) => {
   const row = document.createElement("tr");
   row.innerHTML = `
+  <td>${shift.name}</td>
   <td>${shift.startTime}</td>
   <td>${shift.endTime}</td>
-  <td>${new Date(shift.date).getTime()}-${new Date(
-    shift.date
-  ).getDate()}-${new Date(shift.date).getFullYear()}</td>
+  <td>${
+    (new Date(shift.endTime) - new Date(shift.startTime)) / 1000 / 60 / 60
+  }</td>
   <td>${shift.wage}</td>
   <td>${shift.workplace}</td>
-  <td>${shift.notes}</td>
   <td>${
     ((new Date(shift.endTime) - new Date(shift.startTime)) / (1000 * 60 * 60)) *
     shift.wage
