@@ -21,8 +21,14 @@ button {
   padding: 0 20px;
 }
 
+a {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #ffe3b3;
+}
+
 .container {
-  width: 100%;
+  width: 1000px;
   height: 90vh;
   background-color: #4f8fc0;
   border-radius: 8px;
@@ -41,6 +47,7 @@ button {
 .navigation__left {
   display: flex;
   align-items: center;
+  flex-wrap: nowrap;
 }
 .navigation__left h1 {
   margin-right: 20px;
@@ -100,13 +107,15 @@ button {
   align-items: center;
   gap: 10px;
 }
-.main__registration input {
+.main__registration input,
+.main__registration select {
   height: 30px;
   border: #4f8fc0;
   width: 300px;
   padding: 5px;
 }
-.main__registration input:focus {
+.main__registration input:focus,
+.main__registration select:focus {
   border: 2px solid #266483;
   outline: none;
 }

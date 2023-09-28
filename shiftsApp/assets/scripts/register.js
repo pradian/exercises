@@ -32,7 +32,7 @@ console.log(users);
 console.log(loggedIn);
 
 if (loggedIn.length > 0) {
-  window.location.replace("index.html");
+  window.location.replace("home.html");
 }
 
 registrationClearBtn.addEventListener("click", () => {
@@ -50,7 +50,7 @@ registrationBtn.addEventListener("click", () => {
   if (registrationUsername.value.length < 6) {
     errors.push("User must have at least 6 characters");
   }
-  if (users.some((user) => user.username)) {
+  if (users.some((user) => user.username === registrationUsername.value)) {
     errors.push("Username already exists");
   }
   if (registrationFirstName.value.length < 2) {
@@ -99,4 +99,10 @@ registrationBtn.addEventListener("click", () => {
   registrationAge.value = "";
   registrationPassword.value = "";
   registrationConfirmPassword.value = "";
+  window.location.href = "index.html";
+});
+
+const registerBackToLogin = document.getElementById("registerBackToLogin");
+registerBackToLogin.addEventListener("click", () => {
+  window.location.href = "index.html";
 });

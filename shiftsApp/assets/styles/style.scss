@@ -22,9 +22,13 @@ button {
   cursor: pointer;
   padding: 0 20px;
 }
-
+a {
+  cursor: pointer;
+  text-decoration: underline;
+  color: $forth-color;
+}
 .container {
-  width: 100%;
+  width: 1000px;
   height: 90vh;
   background-color: $secundary-color;
   border-radius: 8px;
@@ -41,6 +45,7 @@ button {
   &__left {
     display: flex;
     align-items: center;
+    flex-wrap: nowrap;
     //   gap: 5px;
     h1 {
       margin-right: 20px;
@@ -58,6 +63,7 @@ button {
   &__right {
     display: flex;
     align-items: center;
+
     // gap: 5px;
     p {
       font-size: 20px;
@@ -103,7 +109,8 @@ button {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    input {
+    input,
+    select {
       height: 30px;
       border: $secundary-color;
       width: 300px;
@@ -193,4 +200,7 @@ button {
 
 .hidden {
   display: none;
+}
+
+@media screen and (max-width: 1000) {
 }

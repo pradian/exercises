@@ -3,14 +3,14 @@ const registrationForm = document.getElementById("registrationForm");
 const loginUsername = document.getElementById("loginUsername");
 const loginPwd = document.getElementById("loginPwd");
 const loginBtn = document.getElementById("loginBtn");
+const forgotPwd = document.getElementById("forgotPwd");
+
 const loggedIn = JSON.parse(localStorage.getItem("loggedIn")) || [];
 const users = JSON.parse(localStorage.getItem("users")) || [];
 
 function setLocalStorage() {
   localStorage.setItem("loggedIn", JSON.stringify(loggedIn));
 }
-console.log(users);
-console.log(loggedIn);
 if (loggedIn.length > 0) {
   window.location.replace("home.html");
 }
@@ -30,4 +30,8 @@ loginBtn.addEventListener("click", () => {
   } else {
     alert("Username or password is incorrect");
   }
+});
+
+forgotPwd.addEventListener("click", () => {
+  console.log("forgot pwd");
 });
