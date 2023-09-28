@@ -15,8 +15,8 @@ const loggedInUser = users.find((user) => {
 });
 
 // If user is not logged in, redirect to login page
-if (loggedIn.length < 1) {
-  window.location.href = "home.html";
+if (!loggedInUser) {
+  window.location.href = "index.html";
 }
 
 // User welcome message
