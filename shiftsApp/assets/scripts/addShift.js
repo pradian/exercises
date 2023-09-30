@@ -49,9 +49,7 @@ class Shift {
     this.workplace = workplace;
     this.notes = notes;
     this.total = parseInt(
-      ((new Date(this.endTime) - new Date(this.startTime)) / 1000) *
-        60 *
-        this.wage
+      ((new Date(endTime) - new Date(startTime)) / (1000 * 60 * 60)) * wage
     );
   }
 }
@@ -77,8 +75,39 @@ addShiftClearBtn.addEventListener("click", () => {
 
 // Add shift button
 const addShiftBtn = document.getElementById("addShiftBtn");
-
+const loadingImg = document.getElementById("loadingImg");
 addShiftBtn.addEventListener("click", () => {
+  let errors = [];
+  if (addShiftName.value.length < 3) {
+    errors.push("Name is too short");
+  } else if (
+    loggedInUser.shifts.some((shift) => shift.name === addShiftName.value)
+  ) {
+    errors.push("Name already exists");
+  }
+  if (!addShiftDate.value) {
+    errors.push("Date is required");
+  }
+  if (!addShiftStartTime.value) {
+    errors.push("Start time is required");
+  }
+  if (!addShiftEndTime.value) {
+    errors.push("End time is required");
+  }
+  if (addShiftEndTime.value < addShiftStartTime.value) {
+    errors.push("End time must be after start time");
+  }
+  if (!addShiftWage.value) {
+    errors.push("Wage is required");
+  }
+  if (!addShiftWorkplace.value) {
+    errors.push("Workplace is required");
+  }
+  console.log(errors);
+  if (errors.length > 0) {
+    alert(errors.join("\n\n"));
+    return;
+  }
   const shift = new Shift(
     addShiftName.value,
     addShiftDate.value,
@@ -88,7 +117,18 @@ addShiftBtn.addEventListener("click", () => {
     addShiftWorkplace.value,
     addShiftNotes.value
   );
-  loggedInUser.shifts.push(shift);
-  localStorage.setItem("users", JSON.stringify(users));
-  window.location.href = "home.html";
+  (addShiftName.disabled = true),
+    (addShiftDate.disabled = true),
+    (addShiftStartTime.disabled = true),
+    (addShiftEndTime.disabled = true),
+    (addShiftWage.disabled = true),
+    (addShiftWorkplace.disabled = true),
+    (addShiftNotes.disabled = true),
+    (loadingImg.style.display = "block");
+  setTimeout(() => {
+    loggedInUser.shifts.push(shift);
+    localStorage.setItem("users", JSON.stringify(users));
+    alert("Shift added!");
+    window.location.href = "home.html";
+  }, 3000);
 });

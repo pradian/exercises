@@ -49,10 +49,7 @@ loggedInUser.shifts.forEach((shift) => {
   }</td>
   <td>${shift.wage} $</td>
   <td>${shift.workplace}</td>
-  <td>${
-    ((new Date(shift.endTime) - new Date(shift.startTime)) / (1000 * 60 * 60)) *
-    shift.wage
-  } $</td></td>
+  <td>${shift.total} $</td></td>
 `;
   showShifts.appendChild(row);
 });
