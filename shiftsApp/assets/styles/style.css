@@ -200,15 +200,17 @@ a {
   border-style: solid;
   padding: 5px;
 }
+.main__shifts table.customTable tbody tr:hover {
+  background-color: #ffe3b3;
+}
 .main__shifts table.customTable thead {
   background-color: #7ea8f8;
 }
 .main__shifts table.customTable tfoot {
   background-color: red;
-}
-.main__shifts table.customTable tfoot tr th {
-  -moz-column-span: 7;
-       column-span: 7;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
 }
 
 .hidden {
