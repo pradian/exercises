@@ -12,7 +12,7 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="./assets/styles/style.css" />
-    <script src="./assets/scripts/addShift.js" defer></script>
+    <script src="./assets/scripts/editShift.js" defer></script>
   </head>
   <body>
     <div class="container">
@@ -35,61 +35,61 @@
         <img src="./assets/images/loading.svg" alt="Loading" id="loadingImg" />
         <div class="main__registration" id="addShiftForm">
           <div>
-            <label for="addShiftName">Shift name:</label>
+            <label for="editShiftName">Shift name:</label>
             <input
               type="text"
               placeholder="Enter shift name"
-              id="addShiftName"
+              id="editShiftName"
             />
           </div>
           <div>
-            <label for="addShiftDate">Date:</label>
-            <input type="date" placeholder="date" id="addShiftDate" />
+            <label for="editShiftDate">Date:</label>
+            <input type="date" placeholder="date" id="editShiftDate" />
           </div>
           <div>
-            <label for="addShiftStartTime">Start shift:</label>
+            <label for="editShiftStartTime">Start shift:</label>
             <input
               type="datetime-local"
               placeholder="Start shift"
-              id="addShiftStartTime"
+              id="editShiftStartTime"
             />
           </div>
           <div>
-            <label for="addShiftEndTime">End shift:</label>
+            <label for="editShiftEndTime">End shift:</label>
             <input
               type="datetime-local"
               placeholder="End shift"
-              id="addShiftEndTime"
+              id="editShiftEndTime"
             />
           </div>
           <div>
-            <label for="addShiftWage">Wage:</label>
+            <label for="editShiftWage">Wage:</label>
             <input
               type="number"
               placeholder="Wage per hour"
-              id="addShiftWage"
+              id="editShiftWage"
             />
           </div>
           <div>
-            <label for="addShiftWorkplace">Workplace:</label>
-            <select name="cars" id="addShiftWorkplace">
+            <label for="editShiftWorkplace">Workplace:</label>
+            <select name="cars" id="editShiftWorkplace">
               <option value="Frontend">Frontend</option>
               <option value="Backend">Backend</option>
               <option value="Mobile">Mobile</option>
             </select>
           </div>
           <div>
-            <label for="addShiftNotes">Shift notes:</label>
+            <label for="editShiftNotes">Shift notes:</label>
             <input
               type="text"
               placeholder="Enter shift notes"
-              id="addShiftNotes"
+              id="editShiftNotes"
             />
           </div>
 
           <div class="registration-buttons">
-            <button id="addShiftBtn">Add shift</button>
-            <button id="addShiftClearBtn">Clear</button>
+            <button id="editShiftBtn">Edit shift</button>
+            <button id="editShiftDeleteBtn">Delete shift</button>
           </div>
         </div>
       </div>

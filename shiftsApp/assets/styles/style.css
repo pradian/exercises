@@ -33,6 +33,7 @@ a {
   background-color: #4f8fc0;
   border-radius: 8px;
   padding: 5px;
+  position: relative;
 }
 
 .navigation {

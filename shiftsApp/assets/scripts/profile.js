@@ -8,12 +8,16 @@ const registrationConfirmPassword = document.getElementById(
   "registrationConfirmPassword"
 );
 const pwdRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])/;
-
+//All shifts
 const myShifts = document.getElementById("myShifts");
 myShifts.addEventListener("click", () => {
   window.location.href = "home.html";
 });
-
+//New shift button
+const addShiftBtn = document.getElementById("addShiftBtn");
+addShiftBtn.addEventListener("click", () => {
+  window.location.href = "addShift.html";
+});
 //Local storage
 const localStorageUsers = JSON.parse(localStorage.getItem("users")) || [];
 const users = localStorageUsers;

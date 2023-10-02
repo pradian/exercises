@@ -26,17 +26,20 @@ if (loggedInUser) {
 const logoutBtn = document.getElementById("logoutBtn");
 logoutBtn.addEventListener("click", () => {
   localStorage.removeItem("loggedIn");
-  window.location.replace("index.html");
+  window.location.href = "index.html";
 });
 
 // User profile button
 const editProfile = document.getElementById("editProfile");
 editProfile.addEventListener("click", () => {
-  window.location.replace("profile.html");
+  window.location.href = "profile.html";
 });
 
 const showShifts = document.querySelector("tbody");
 showShifts.innerHTML = "";
+if (loggedInUser.shifts.length === 0) {
+  showShifts.innerHTML = `<tr><td colspan="7" style="text-align: center;"><strong>You have no shifts yet!</strong></td></tr>`;
+}
 loggedInUser.shifts.forEach((shift) => {
   const startTime = new Date(shift.startTime);
   const endTime = new Date(shift.endTime);
@@ -68,6 +71,10 @@ loggedInUser.shifts.forEach((shift) => {
   <td>${shift.workplace}</td>
   <td>${shift.total} $</td></td>
 `;
+
+  row.addEventListener("click", () => {
+    window.location.href = `editshift.html?shiftId=${shift.name}`;
+  });
   showShifts.appendChild(row);
 });
 
