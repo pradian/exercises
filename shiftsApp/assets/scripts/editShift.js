@@ -57,9 +57,9 @@ console.log(shiftToEdit);
 // Edit shift predefine values
 if (shiftToEdit) {
   editShiftName.value = shiftToEdit.name;
-  editShiftDate.value = shiftToEdit.date;
-  editShiftStartTime.value = shiftToEdit.startTime;
-  editShiftEndTime.value = shiftToEdit.endTime;
+  editShiftDate.value = shiftToEdit.date.toString().slice(0, 10);
+  editShiftStartTime.value = shiftToEdit.startTime.toString().slice(0, 16);
+  editShiftEndTime.value = shiftToEdit.endTime.toString().slice(0, 16);
   editShiftWage.value = shiftToEdit.wage;
   editShiftWorkplace.value = shiftToEdit.workplace;
   editShiftNotes.value = shiftToEdit.notes;
