@@ -53,7 +53,7 @@ const editShiftWage = document.getElementById("editShiftWage");
 const editShiftWorkplace = document.getElementById("editShiftWorkplace");
 const editShiftNotes = document.getElementById("editShiftNotes");
 const loadingImg = document.getElementById("loadingImg");
-console.log(shiftToEdit);
+
 // Edit shift predefine values
 if (shiftToEdit) {
   editShiftName.value = shiftToEdit.name;
@@ -118,3 +118,17 @@ editShiftBtn.addEventListener("click", () => {
 
 // Delete shift button
 const editShiftDeleteBtn = document.getElementById("editShiftDeleteBtn");
+editShiftDeleteBtn.addEventListener("click", () => {
+  const confirmDelete = confirm("Are you sure you want to delete this shift?");
+  if (!confirmDelete) {
+    if (shiftToEdit !== -1) {
+      loggedInUser.shifts.splice(shiftToEdit, 1);
+    }
+    localStorage.setItem("users", JSON.stringify(users));
+    alert("Shift deleted!");
+    window.location.href = "home.html";
+  } else {
+    alert("Shift not deleted!");
+    return;
+  }
+});

@@ -34,13 +34,16 @@ const editProfile = document.getElementById("editProfile");
 editProfile.addEventListener("click", () => {
   window.location.href = "profile.html";
 });
-
+//Show shifts
 const showShifts = document.querySelector("tbody");
 showShifts.innerHTML = "";
 if (loggedInUser.shifts.length === 0) {
   showShifts.innerHTML = `<tr><td colspan="7" style="text-align: center;"><strong>You have no shifts yet!</strong></td></tr>`;
 }
-loggedInUser.shifts.forEach((shift) => {
+const sortedShifts = loggedInUser.shifts.sort((a, b) => {
+  return new Date(b.date) - new Date(a.date);
+});
+sortedShifts.forEach((shift) => {
   const startTime = new Date(shift.startTime);
   const endTime = new Date(shift.endTime);
 
@@ -78,57 +81,72 @@ loggedInUser.shifts.forEach((shift) => {
   showShifts.appendChild(row);
 });
 
-// // Calculate best month
-// const showBestMonth = document.querySelector("tfoot");
+//Search shifts by Shift name , from , to. If one is null will not be included
+const searchShiftsName = document.getElementById("searchShiftsName");
+const searchShiftsFromDate = document.getElementById("searchShiftsFromDate");
+const searchShiftsToDate = document.getElementById("searchShiftsToDate");
+const searchShiftsBtn = document.getElementById("searchShiftsBtn");
+const searchShiftsClearBtn = document.getElementById("searchShiftsClearBtn");
 
-// function calculateTotalPerMonth(shifts, year, month) {
-//   return shifts.reduce((total, shift) => {
-//     const shiftDate = new Date(shift.endTime);
-//     if (shiftDate.getFullYear() === year && shiftDate.getMonth() === month) {
-//       return total + shift.total;
-//     }
-//     return {total: total };
-//   }, 0);
-// }
-// function calculateBestMonth(shifts) {
-//   const bestMonth = {
-//     month: 0,
-//     year: 0,
-//     total: 0,
-//   };
-//   for (let i = 0; i < 12; i++) {
-//     const total = calculateTotalPerMonth(shifts, new Date().getFullYear(), i);
-//     const monthName = [
-//       "January",
-//       "February",
-//       "March",
-//       "April",
-//       "May",
-//       "June",
-//       "July",
-//       "August",
-//       "September",
-//       "October",
-//       "November",
-//       "December",
-//     ];
-//     if (total > bestMonth.total) {
-//       bestMonth.month = monthName[i];
-//       bestMonth.year = new Date().getFullYear();
-//       bestMonth.total = total;
-//     }
-//   }
-//   return {
-//     month: bestMonth.month,
-//     year: bestMonth.year,
-//     total: bestMonth.total,
-//   };
-// }
+searchShiftsClearBtn.addEventListener("click", () => {
+  searchShiftsName.value = "";
+  searchShiftsFromDate.value = "";
+  searchShiftsToDate.value = "";
+});
 
-// const tFootRow = document.createElement("tr");
+searchShiftsBtn.addEventListener("click", () => {
+  const searchedShifts = sortedShifts.filter((shift) => {
+    const nameMatch = searchShiftsName.value
+      ? shift.name.toLowerCase().includes(searchShiftsName.value.toLowerCase())
+      : true;
+    const fromDateMatch = searchShiftsFromDate.value
+      ? new Date(shift.date) >= new Date(searchShiftsFromDate.value)
+      : true;
+    const toDateMatch = searchShiftsToDate.value
+      ? new Date(shift.date) <= new Date(searchShiftsToDate.value)
+      : true;
+    return nameMatch && fromDateMatch && toDateMatch;
+  });
 
-// const bestMonth = calculateBestMonth(loggedInUser.shifts);
+  showShifts.innerHTML = "";
+  if (searchedShifts.length === 0) {
+    showShifts.innerHTML = `<tr><td colspan="7" style="text-align: center;"><strong>No shifts found!</strong></td></tr>`;
+  }
+  searchedShifts.forEach((shift) => {
+    const startTime = new Date(shift.startTime);
+    const endTime = new Date(shift.endTime);
+    const formattedStartTime = `${startTime.toLocaleDateString("en-US", {
+      weekday: "short",
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    })}, ${startTime.getHours()}:${String(startTime.getMinutes()).padStart(
+      2,
+      "0"
+    )}`;
+    const formattedEndTime = `${endTime.toLocaleDateString("en-US", {
+      weekday: "short",
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    })}, ${endTime.getHours()}:${String(endTime.getMinutes()).padStart(
+      2,
+      "0"
+    )}`;
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${shift.name}</td>
+      <td>${formattedStartTime}</td>
+      <td>${formattedEndTime}</td>
+      <td>${(endTime - startTime) / 1000 / 60 / 60}</td>
+      <td>${shift.wage} $</td>
+      <td>${shift.workplace}</td>
+      <td>${shift.total} $</td>
+    `;
 
-// tFootRow.innerHTML = `<th colspan="3">Best month:</th> <th colspan="2"> ${bestMonth.month} ${bestMonth.year}</th> <th colspan="2"> ${bestMonth.total}$</th>`;
+    showShifts.appendChild(row);
+  });
+});
 
-// showBestMonth.appendChild(tFootRow);
+// Calculate best month
+const showBestMonth = document.querySelector("tfoot");

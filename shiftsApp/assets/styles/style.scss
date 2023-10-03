@@ -191,6 +191,7 @@ a {
     .search-shifts {
       display: flex;
       flex-direction: row;
+      justify-content: center;
       gap: 30px;
       margin: 30px;
       input {
@@ -234,5 +235,9 @@ a {
   display: none;
 }
 
-@media screen and (max-width: 1000) {
-}
+// @media screen and (max-width: 1000px) {
+//   .navigation__right {
+//     position: absolute;
+//     bottom: 1px;
+//   }
+// }

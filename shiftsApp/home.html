@@ -22,7 +22,6 @@
           <div class="logged-in" id="loggedIn">
             <button id="myShifts">Shifts</button>
             <button id="addShiftBtn">New shift</button>
-            <button disabled>Button</button>
           </div>
         </div>
         <div class="navigation__right">
@@ -34,10 +33,23 @@
       <div class="main">
         <div class="main__shifts">
           <div class="search-shifts">
-            <input type="text" id="searchShifts" placeholder="Shift name" />
-            <input type="date" id="searchShiftStartDate" />
-            <input type="date" id="seatchShiftEndDate" />
-            <input type="button" value="Search" />
+            <div>
+              <input
+                type="text"
+                id="searchShiftsName"
+                placeholder="Shift name"
+              />
+              <input type="date" id="searchShiftsFromDate" />
+              <input type="date" id="searchShiftsToDate" />
+            </div>
+            <div>
+              <input type="button" value="Search" id="searchShiftsBtn" />
+              <input
+                type="button"
+                value="Clear search"
+                id="searchShiftsClearBtn"
+              />
+            </div>
           </div>
           <table class="customTable">
             <thead>

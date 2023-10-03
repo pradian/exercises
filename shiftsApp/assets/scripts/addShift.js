@@ -4,6 +4,10 @@ const myShifts = document.getElementById("myShifts");
 myShifts.addEventListener("click", () => {
   window.location.href = "home.html";
 });
+const newShift = document.getElementById("newShift");
+newShift.addEventListener("click", () => {
+  window.location.href = "addShift.html";
+});
 
 // Local storage
 
@@ -60,6 +64,8 @@ const addShiftEndTime = document.getElementById("addShiftEndTime");
 const addShiftWage = document.getElementById("addShiftWage");
 const addShiftWorkplace = document.getElementById("addShiftWorkplace");
 const addShiftNotes = document.getElementById("addShiftNotes");
+const addShiftBtn = document.getElementById("addShiftBtn");
+const loadingImg = document.getElementById("loadingImg");
 
 // Clear shift form
 const addShiftClearBtn = document.getElementById("addShiftClearBtn");
@@ -74,8 +80,7 @@ addShiftClearBtn.addEventListener("click", () => {
 });
 
 // Add shift button
-const addShiftBtn = document.getElementById("addShiftBtn");
-const loadingImg = document.getElementById("loadingImg");
+
 addShiftBtn.addEventListener("click", () => {
   let errors = [];
   if (addShiftName.value.length < 3) {
