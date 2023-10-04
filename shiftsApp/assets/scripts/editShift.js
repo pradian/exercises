@@ -120,7 +120,7 @@ editShiftBtn.addEventListener("click", () => {
 const editShiftDeleteBtn = document.getElementById("editShiftDeleteBtn");
 editShiftDeleteBtn.addEventListener("click", () => {
   const confirmDelete = confirm("Are you sure you want to delete this shift?");
-  if (!confirmDelete) {
+  if (confirmDelete) {
     if (shiftToEdit !== -1) {
       loggedInUser.shifts.splice(shiftToEdit, 1);
     }
