@@ -150,3 +150,51 @@ searchShiftsBtn.addEventListener("click", () => {
 
 // Calculate best month
 const showBestMonth = document.querySelector("tfoot");
+function calculateBestMonth() {
+  const monthsEarnings = [];
+  sortedShifts.forEach((shift) => {
+    const date = new Date(shift.date);
+    const year = date.getFullYear();
+    const month = date.getMonth();
+
+    const existingMonth = monthsEarnings.find(
+      (item) => item.year === year && item.month === month
+    );
+
+    if (existingMonth) {
+      existingMonth.total += shift.total;
+    } else {
+      monthsEarnings.push({
+        year: year,
+        month: month,
+        total: shift.total,
+      });
+    }
+  });
+  const sortedMonths = monthsEarnings.sort((a, b) => b.total - a.total);
+
+  if (sortedMonths.length > 0) {
+    const monthNames = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    showBestMonth.innerHTML = `<tr><td colspan="7" style="text-align: center;"><strong>Best Month is: ${
+      monthNames[sortedMonths[0].month]
+    } ${sortedMonths[0].year} with a total earnings of ${
+      sortedMonths[0].total
+    } $ </strong></td></tr>`;
+  } else {
+    showShifts.innerHTML = `<tr><td colspan="7" style="text-align: center;"><strong>No shifts found!</strong></td></tr>`;
+  }
+}
+calculateBestMonth();
