@@ -34,12 +34,8 @@ const editProfile = document.getElementById("editProfile");
 editProfile.addEventListener("click", () => {
   window.location.href = "profile.html";
 });
-<<<<<<< Updated upstream
-//Show shifts
-=======
 
 // Show shifts table
->>>>>>> Stashed changes
 const showShifts = document.querySelector("tbody");
 showShifts.innerHTML = "";
 if (loggedInUser.shifts.length === 0) {
@@ -79,14 +75,9 @@ sortedShifts.forEach((shift) => {
   <td>${shift.workplace}</td>
   <td>${shift.total} $</td></td>
 `;
-<<<<<<< Updated upstream
 
   row.addEventListener("click", () => {
     window.location.href = `editshift.html?shiftId=${shift.name}`;
-=======
-  row.addEventListener("click", () => {
-    editShift(shift);
->>>>>>> Stashed changes
   });
   showShifts.appendChild(row);
 });
@@ -95,7 +86,6 @@ function editShift(shift) {
   console.log(shift);
 }
 
-<<<<<<< Updated upstream
 //Search shifts by Shift name , from , to. If one is null will not be included
 const searchShiftsName = document.getElementById("searchShiftsName");
 const searchShiftsFromDate = document.getElementById("searchShiftsFromDate");
@@ -107,6 +97,7 @@ searchShiftsClearBtn.addEventListener("click", () => {
   searchShiftsName.value = "";
   searchShiftsFromDate.value = "";
   searchShiftsToDate.value = "";
+  window.location.href = "home.html";
 });
 
 searchShiftsBtn.addEventListener("click", () => {
@@ -213,19 +204,3 @@ function calculateBestMonth() {
   }
 }
 calculateBestMonth();
-=======
-// Calculate best month
-const showBestMonth = document.querySelector("tfoot");
-
-function bestMonth(shifts) {
-  let monthTotal = [];
-  for (const shift of shifts) {
-    const date = new Date(shift.startTime);
-    const month = date.toLocaleString("default", { month: "long" });
-    const year = date.getFullYear();
-    const total = shift.total;
-    if (shift.date) {
-    }
-  }
-}
->>>>>>> Stashed changes
