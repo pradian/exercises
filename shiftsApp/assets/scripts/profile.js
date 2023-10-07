@@ -52,6 +52,7 @@ editProfile.addEventListener("click", () => {
 
 if (loggedInUser) {
   registrationUsername.value = loggedInUser.username;
+  registrationUsername.disabled = true;
   registrationFirstName.value = loggedInUser.firstName;
   registrationLastName.value = loggedInUser.lastName;
   registrationEmail.value = loggedInUser.email;
