@@ -57,6 +57,7 @@ const loadingImg = document.getElementById("loadingImg");
 // Edit shift predefine values
 if (shiftToEdit) {
   editShiftName.value = shiftToEdit.name;
+  editShiftName.disabled = true;
   editShiftDate.value = shiftToEdit.date.toString().slice(0, 10);
   editShiftStartTime.value = shiftToEdit.startTime.toString().slice(0, 16);
   editShiftEndTime.value = shiftToEdit.endTime.toString().slice(0, 16);
@@ -106,9 +107,10 @@ editShiftBtn.addEventListener("click", () => {
       shiftToEdit.workplace = editShiftWorkplace.value;
       shiftToEdit.notes = editShiftNotes.value;
       shiftToEdit.total =
-        ((new Date(shiftToEdit.endTime) - new Date(shiftToEdit.startTime)) /
-          (1000 * 60 * 60)) *
-        shiftToEdit.wage;
+        Math.round(
+          (new Date(shiftToEdit.endTime) - new Date(shiftToEdit.startTime)) /
+            (1000 * 60 * 60)
+        ) * shiftToEdit.wage;
     }
     localStorage.setItem("users", JSON.stringify(users));
     alert("Shift updated!");

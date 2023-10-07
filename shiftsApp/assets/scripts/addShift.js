@@ -52,9 +52,9 @@ class Shift {
     this.wage = wage;
     this.workplace = workplace;
     this.notes = notes;
-    this.total = parseInt(
-      ((new Date(endTime) - new Date(startTime)) / (1000 * 60 * 60)) * wage
-    );
+    this.total =
+      Math.round((new Date(endTime) - new Date(startTime)) / (1000 * 60 * 60)) *
+      wage;
   }
 }
 const addShiftName = document.getElementById("addShiftName");

@@ -107,3 +107,25 @@ profileEditBtn.addEventListener("click", () => {
   alert("Profile updated!");
   window.location.href = "home.html";
 });
+
+// Delete user account
+
+const deleteAccount = document.getElementById("deleteAccount");
+
+deleteAccount.addEventListener("click", () => {
+  console.log("Account deleted");
+  const confirmDelete = confirm(
+    "Are you sure you want to delete this account?"
+  );
+  if (confirmDelete) {
+    if (loggedInUser !== -1) {
+      loggedInUser.splice();
+    }
+    localStorage.setItem("users", JSON.stringify(users));
+    alert("Account deleted!");
+    window.location.href = "index.html";
+  } else {
+    alert("Account not deleted!");
+    return;
+  }
+});

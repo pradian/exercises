@@ -33,5 +33,5 @@ loginBtn.addEventListener("click", () => {
 });
 
 forgotPwd.addEventListener("click", () => {
-  console.log("forgot pwd");
+  window.location.href = "forgotPassword.html";
 });
