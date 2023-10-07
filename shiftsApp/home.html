@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Petre Radian Alexandru" />
+    <title>Document</title>
+
+    <link
+      rel="shortcut icon"
+      href="./assets/images/fav.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <script src="./assets/scripts/home.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navigation">
+        <div class="navigation__left">
+          <h1>Shift app</h1>
+          <div class="logged-in" id="loggedIn">
+            <button id="myShifts">Shifts</button>
+            <button id="addShiftBtn">New shift</button>
+          </div>
+        </div>
+        <div class="navigation__right">
+          <p id="welcomeUser"></p>
+          <button id="editProfile">Edit profile</button>
+          <button id="logoutBtn">Logout</button>
+        </div>
+      </div>
+      <div class="main">
+        <div class="main__shifts">
+          <div class="search-shifts">
+            <div>
+              <input
+                type="text"
+                id="searchShiftsName"
+                placeholder="Shift name"
+              />
+              <input type="date" id="searchShiftsFromDate" />
+              <input type="date" id="searchShiftsToDate" />
+            </div>
+            <div>
+              <input type="button" value="Search" id="searchShiftsBtn" />
+              <input
+                type="button"
+                value="Clear search"
+                id="searchShiftsClearBtn"
+              />
+            </div>
+          </div>
+          <table class="customTable">
+            <thead>
+              <tr>
+                <th>Shift name</th>
+                <th>Start date</th>
+                <th>End date</th>
+                <th>Hours worked</th>
+                <th>Wage per hour</th>
+                <th>Location</th>
+                <th>Total income</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot></tfoot>
+          </table>
+        </div>
+      </div>
+      <div class="footer">
+        <h5>&copy; Shift application</h5>
+      </div>
+    </div>
+  </body>
+</html>

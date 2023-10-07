@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Petre Radian Alexandru" />
+    <title>Document</title>
+
+    <link
+      rel="shortcut icon"
+      href="./assets/images/fav.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <script src="./assets/scripts/addShift.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navigation">
+        <div class="navigation__left">
+          <h1>Shift app</h1>
+          <div class="logged-in" id="loggedIn">
+            <button id="myShifts">Shifts</button>
+            <button id="newShift">New shift</button>
+          </div>
+        </div>
+        <div class="navigation__right">
+          <p id="welcomeUser">Welcome user</p>
+          <button id="editProfile">Edit profile</button>
+          <button id="logoutBtn">Logout</button>
+        </div>
+      </div>
+      <div class="main">
+        <img src="./assets/images/loading.svg" alt="Loading" id="loadingImg" />
+        <div class="main__registration" id="addShiftForm">
+          <div>
+            <label for="addShiftName">Shift name:</label>
+            <input
+              type="text"
+              placeholder="Enter shift name"
+              id="addShiftName"
+            />
+          </div>
+          <div>
+            <label for="addShiftDate">Date:</label>
+            <input type="date" placeholder="date" id="addShiftDate" />
+          </div>
+          <div>
+            <label for="addShiftStartTime">Start shift:</label>
+            <input
+              type="datetime-local"
+              placeholder="Start shift"
+              id="addShiftStartTime"
+            />
+          </div>
+          <div>
+            <label for="addShiftEndTime">End shift:</label>
+            <input
+              type="datetime-local"
+              placeholder="End shift"
+              id="addShiftEndTime"
+            />
+          </div>
+          <div>
+            <label for="addShiftWage">Wage:</label>
+            <input
+              type="number"
+              placeholder="Wage per hour"
+              id="addShiftWage"
+            />
+          </div>
+          <div>
+            <label for="addShiftWorkplace">Workplace:</label>
+            <select name="cars" id="addShiftWorkplace">
+              <option value="Frontend">Frontend</option>
+              <option value="Backend">Backend</option>
+              <option value="Mobile">Mobile</option>
+            </select>
+          </div>
+          <div>
+            <label for="addShiftNotes">Shift notes:</label>
+            <input
+              type="text"
+              placeholder="Enter shift notes"
+              id="addShiftNotes"
+            />
+          </div>
+
+          <div class="registration-buttons">
+            <button id="addShiftBtn">Add shift</button>
+            <button id="addShiftClearBtn">Clear</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <h5>&copy; Shift application</h5>
+      </div>
+    </div>
+  </body>
+</html>
