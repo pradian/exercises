@@ -67,9 +67,9 @@ sortedShifts.forEach((shift) => {
   <td>${shift.name}</td>
   <td>${formattedStartTime}</td>
   <td>${formattedEndTime}</td>
-  <td>${
+  <td>${Math.round(
     (new Date(shift.endTime) - new Date(shift.startTime)) / 1000 / 60 / 60
-  }</td>
+  )}</td>
   <td>${shift.wage} $</td>
   <td>${shift.workplace}</td>
   <td>${shift.total} $</td></td>
