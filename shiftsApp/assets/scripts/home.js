@@ -37,9 +37,10 @@ editProfile.addEventListener("click", () => {
 
 // Show shifts table
 const showShifts = document.querySelector("tbody");
-showShifts.innerHTML = "";
+const main = document.querySelector("main");
+main.innerHTML = "";
 if (loggedInUser.shifts.length === 0) {
-  showShifts.innerHTML = `<tr><td colspan="7" style="text-align: center;"><strong>You have no shifts yet!</strong></td></tr>`;
+  main.innerHTML = `<h4 style="text-align: center;"><strong>You have no shifts yet!</strong></h4>`;
 }
 const sortedShifts = loggedInUser.shifts.sort((a, b) => {
   return new Date(b.date) - new Date(a.date);
@@ -64,22 +65,23 @@ sortedShifts.forEach((shift) => {
     day: "numeric",
   })}, ${endTime.getHours()}:${String(endTime.getMinutes()).padStart(2, "0")}`;
   const row = document.createElement("tr");
-  row.innerHTML = `
-  <td>${shift.name}</td>
-  <td>${formattedStartTime}</td>
-  <td>${formattedEndTime}</td>
-  <td>${Math.round(
+  const div = document.createElement("div");
+  div.innerHTML = `
+  <p>Shift name:<span>${shift.name}</span></p>
+  <p>Start stift:<span> ${formattedStartTime}</span></p>
+  <p>End shift:<span> ${formattedEndTime}</span></p>
+  <p>Hours worked:<span> ${Math.round(
     (new Date(shift.endTime) - new Date(shift.startTime)) / 1000 / 60 / 60
-  )}</td>
-  <td>${shift.wage} $</td>
-  <td>${shift.workplace}</td>
-  <td>${shift.total} $</td></td>
+  )}</p>
+  <p>Wage per hour:<span> ${shift.wage} $</span></p>
+  <p>Shift workplace:<span> ${shift.workplace}</span></p>
+  <p>Total wage:<span> ${shift.total} $</span></p>
 `;
-
-  row.addEventListener("click", () => {
+  div.style.cursor = "pointer";
+  div.addEventListener("click", () => {
     window.location.href = `editshift.html?shiftId=${shift.name}`;
   });
-  showShifts.appendChild(row);
+  main.appendChild(div);
 });
 // Edit shifts
 function editShift(shift) {
@@ -114,9 +116,9 @@ searchShiftsBtn.addEventListener("click", () => {
     return nameMatch && fromDateMatch && toDateMatch;
   });
 
-  showShifts.innerHTML = "";
+  main.innerHTML = "";
   if (searchedShifts.length === 0) {
-    showShifts.innerHTML = `<tr><td colspan="7" style="text-align: center;"><strong>No shifts found!</strong></td></tr>`;
+    main.innerHTML = `<h3><strong>No shifts found!</strong></h3>`;
   }
   searchedShifts.forEach((shift) => {
     const startTime = new Date(shift.startTime);
@@ -139,23 +141,28 @@ searchShiftsBtn.addEventListener("click", () => {
       2,
       "0"
     )}`;
-    const row = document.createElement("tr");
-    row.innerHTML = `
-      <td>${shift.name}</td>
-      <td>${formattedStartTime}</td>
-      <td>${formattedEndTime}</td>
-      <td>${(endTime - startTime) / 1000 / 60 / 60}</td>
-      <td>${shift.wage} $</td>
-      <td>${shift.workplace}</td>
-      <td>${shift.total} $</td>
-    `;
-
-    showShifts.appendChild(row);
+    const div = document.createElement("div");
+    div.innerHTML = `
+  <p>Shift name:<span>${shift.name}</span></p>
+  <p>Start stift:<span> ${formattedStartTime}</span></p>
+  <p>End shift:<span> ${formattedEndTime}</span></p>
+  <p>Hours worked:<span> ${Math.round(
+    (new Date(shift.endTime) - new Date(shift.startTime)) / 1000 / 60 / 60
+  )}</p>
+  <p>Wage per hour:<span> ${shift.wage} $</span></p>
+  <p>Shift workplace:<span> ${shift.workplace}</span></p>
+  <p>Total wage:<span> ${shift.total} $</span></p>
+`;
+    div.style.cursor = "pointer";
+    div.addEventListener("click", () => {
+      window.location.href = `editshift.html?shiftId=${shift.name}`;
+    });
+    main.appendChild(div);
   });
 });
 
-// Calculate best month
-const showBestMonth = document.querySelector("tfoot");
+//Calculate best month
+const showBestMonth = document.getElementById("showBestMonth");
 function calculateBestMonth() {
   const monthsEarnings = [];
   sortedShifts.forEach((shift) => {
@@ -194,13 +201,12 @@ function calculateBestMonth() {
       "November",
       "December",
     ];
-    showBestMonth.innerHTML = `<tr><td colspan="7" style="text-align: center;"><strong>Best Month is: ${
+    showBestMonth.innerHTML = `<h3><strong>Best Month is: ${
       monthNames[sortedMonths[0].month]
-    } ${sortedMonths[0].year} with a total earnings of ${
-      sortedMonths[0].total
-    } $ </strong></td></tr>`;
+    } ${sortedMonths[0].year} with a total earnings of
+    ${sortedMonths[0].total} $ </strong></h3>`;
   } else {
-    showShifts.innerHTML = `<tr><td colspan="7" style="text-align: center;"><strong>No shifts found!</strong></td></tr>`;
+    main.innerHTML = `<h3><strong>No shifts found!</strong></h3>`;
   }
 }
 calculateBestMonth();

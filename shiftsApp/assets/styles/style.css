@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: hsl(200, 55%, 33%);
+  background-color: #072736;
   height: 100vh;
   display: grid;
   place-items: center;
@@ -28,12 +28,15 @@ a {
 }
 
 .container {
-  width: 1000px;
+  max-width: 1000px;
   height: 90vh;
   background-color: #4f8fc0;
   border-radius: 8px;
   padding: 5px;
-  position: relative;
+}
+.container .footer {
+  color: #ffe3b3;
+  font-size: 20px;
 }
 
 .navigation {
@@ -48,7 +51,6 @@ a {
 .navigation__left {
   display: flex;
   align-items: center;
-  flex-wrap: nowrap;
 }
 .navigation__left h1 {
   margin-right: 20px;
@@ -81,6 +83,21 @@ a {
   width: 100%;
   height: 95%;
   position: relative;
+  overflow-y: scroll;
+}
+.main .best-month {
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background-color: #ffe3b3;
+  border: 1px solid #072736;
+  border-radius: 8px;
+}
+.main .best-month h3 {
+  font-size: 24px;
+  color: #072736;
 }
 .main img {
   display: none;
@@ -128,7 +145,7 @@ a {
 }
 .main__registration input:focus,
 .main__registration select:focus {
-  border: 2px solid hsl(200, 55%, 33%);
+  border: 2px solid #072736;
   outline: none;
 }
 .main__registration button {
@@ -159,7 +176,7 @@ a {
   padding: 5px;
 }
 .main__login input:focus {
-  border: 2px solid hsl(200, 55%, 33%);
+  border: 2px solid #072736;
   outline: none;
 }
 .main__login button {
@@ -174,47 +191,113 @@ a {
 .main__shifts {
   display: flex;
   flex-direction: column;
-  padding-top: 30px;
+  height: 100%;
 }
 .main__shifts .search-shifts {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   gap: 30px;
-  margin: 30px;
+  margin: 10px;
 }
 .main__shifts .search-shifts input {
   padding: 10px;
 }
-.main__shifts table.customTable {
-  width: 100%;
-  background-color: #ffffff;
-  border-collapse: collapse;
-  border-width: 2px;
-  border-color: #7ea8f8;
-  border-style: solid;
-  color: #000000;
+.main__shifts .search-shifts button {
+  height: 40px;
 }
-.main__shifts table.customTable td,
-.main__shifts table.customTable th {
-  border-width: 2px;
-  border-color: #7ea8f8;
-  border-style: solid;
-  padding: 5px;
+.main__shifts main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  overflow: scroll;
+  margin-bottom: 50px;
 }
-.main__shifts table.customTable tbody tr:hover {
+.main__shifts main div {
+  width: 400px;
+  border: 1px solid #ffe3b3;
   background-color: #ffe3b3;
+  border-radius: 8px;
+  padding: 10px;
+  color: #072736;
+  cursor: pointer;
 }
-.main__shifts table.customTable thead {
-  background-color: #7ea8f8;
+.main__shifts main div p {
+  font-size: 20px;
+  font-weight: 700;
 }
-.main__shifts table.customTable tfoot {
-  background-color: red;
-  color: white;
-  font-size: 25px;
-  font-weight: 800;
+.main__shifts main div p span {
+  color: red;
 }
 
 .hidden {
   display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  body {
+    padding: 0;
+  }
+  .search-shifts {
+    gap: 5px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .search-shifts div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .search-shifts div input {
+    flex-grow: 1;
+  }
+  .container {
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+  .navigation {
+    height: 0px;
+    width: 100%;
+  }
+  .navigation__right,
+  .navigation__left {
+    position: absolute;
+    background: #53d2dc;
+    width: 100%;
+    align-self: center;
+    margin-left: 0;
+  }
+  .navigation__right {
+    bottom: 1px;
+    z-index: 1;
+  }
+  .navigation__right p {
+    width: 250px;
+    font-size: 20px;
+  }
+  .navigation__right button {
+    flex-grow: 1;
+  }
+  .navigation__left {
+    top: 0;
+    z-index: 1;
+  }
+  .navigation__left h1 {
+    width: 200px;
+  }
+  .navigation__left .logged-in {
+    display: flex;
+    width: calc(100vw - 200px);
+  }
+  .navigation__left .logged-in button {
+    flex-grow: 1;
+  }
+  .best-month {
+    margin-bottom: 10px;
+  }
+  .footer {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */
