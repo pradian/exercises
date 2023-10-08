@@ -282,6 +282,15 @@ a {
   }
   .main__shifts {
     margin-bottom: 60px;
+    padding-top: 50px;
     background-color: $secundary-color;
+  }
+  .customTable {
+    tr th:first-child {
+      display: none;
+    }
+    tr td:first-child {
+      display: none;
+    }
   }
 }

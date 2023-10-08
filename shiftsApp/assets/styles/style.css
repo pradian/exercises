@@ -269,6 +269,13 @@ a {
   }
   .main__shifts {
     margin-bottom: 60px;
+    padding-top: 50px;
     background-color: #4f8fc0;
+  }
+  .customTable tr th:first-child {
+    display: none;
+  }
+  .customTable tr td:first-child {
+    display: none;
   }
 }/*# sourceMappingURL=style.css.map */

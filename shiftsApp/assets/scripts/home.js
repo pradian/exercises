@@ -70,7 +70,7 @@ sortedShifts.forEach((shift) => {
   <td>${formattedEndTime}</td>
   <td>${Math.round(
     (new Date(shift.endTime) - new Date(shift.startTime)) / 1000 / 60 / 60
-  )}</td>
+  )} h</td>
   <td>${shift.wage} $</td>
   <td>${shift.workplace}</td>
   <td>${shift.total} $</td></td>
@@ -140,7 +140,7 @@ searchShiftsBtn.addEventListener("click", () => {
       <td>${shift.name}</td>
       <td>${formattedStartTime}</td>
       <td>${formattedEndTime}</td>
-      <td>${(endTime - startTime) / 1000 / 60 / 60}</td>
+      <td>${(endTime - startTime) / 1000 / 60 / 60} h</td>
       <td>${shift.wage} $</td>
       <td>${shift.workplace}</td>
       <td>${shift.total} $</td>
