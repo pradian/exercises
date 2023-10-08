@@ -1,4 +1,4 @@
-// All shifts button
+// Shifts buttons
 
 const myShifts = document.getElementById("myShifts");
 myShifts.addEventListener("click", () => {
@@ -29,14 +29,13 @@ if (loggedInUser) {
   welcomeUser.innerHTML = `Welcome, ${loggedInUser.firstName} ${loggedInUser.lastName}!`;
 }
 
-//User logout button
+//User buttons
 const logoutBtn = document.getElementById("logoutBtn");
 logoutBtn.addEventListener("click", () => {
   localStorage.removeItem("loggedIn");
   window.location.href = "index.html";
 });
 
-// User profile button
 const editProfile = document.getElementById("editProfile");
 editProfile.addEventListener("click", () => {
   window.location.href = "profile.html";

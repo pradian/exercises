@@ -81,10 +81,6 @@ sortedShifts.forEach((shift) => {
   });
   showShifts.appendChild(row);
 });
-// Edit shifts
-function editShift(shift) {
-  console.log(shift);
-}
 
 //Search shifts by Shift name , from , to. If one is null will not be included
 const searchShiftsName = document.getElementById("searchShiftsName");
@@ -196,7 +192,7 @@ function calculateBestMonth() {
     ];
     showBestMonth.innerHTML = `<tr><td colspan="7" style="text-align: center;"><strong>Best Month is: ${
       monthNames[sortedMonths[0].month]
-    } ${sortedMonths[0].year} with a total earnings of ${
+    } ${sortedMonths[0].year} with  ${
       sortedMonths[0].total
     } $ </strong></td></tr>`;
   } else {
