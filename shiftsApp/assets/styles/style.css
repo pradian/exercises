@@ -197,7 +197,8 @@ a {
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
 }
 .main__shifts .search-shifts input {
   padding: 10px;
@@ -212,6 +213,7 @@ a {
   gap: 25px;
   overflow: scroll;
   margin-bottom: 50px;
+  margin-top: 5px;
 }
 .main__shifts main div {
   width: 400px;
