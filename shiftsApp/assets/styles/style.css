@@ -183,8 +183,19 @@ a {
   gap: 30px;
   margin: 30px;
 }
+.main__shifts .search-shifts div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
 .main__shifts .search-shifts input {
   padding: 10px;
+  width: 150px;
+  flex-grow: 1;
+}
+.main__shifts .search-shifts button {
+  width: 150px;
 }
 .main__shifts table.customTable {
   width: 100%;
@@ -219,7 +230,7 @@ a {
   display: none;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 900px) {
   body {
     padding: 0;
     position: relative;
@@ -235,7 +246,7 @@ a {
     height: fit-content;
   }
   .navigation__left {
-    border-radius: none;
+    border-radius: 0;
     position: absolute;
     z-index: 1;
     top: 0;

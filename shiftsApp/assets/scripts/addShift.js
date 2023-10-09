@@ -134,5 +134,5 @@ addShiftBtn.addEventListener("click", () => {
     localStorage.setItem("users", JSON.stringify(users));
     alert("Shift added!");
     window.location.href = "home.html";
-  }, 3000);
+  }, 2000);
 });

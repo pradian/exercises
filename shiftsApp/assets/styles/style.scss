@@ -194,8 +194,20 @@ a {
       justify-content: center;
       gap: 30px;
       margin: 30px;
+      div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        gap: 10px;
+      }
       input {
         padding: 10px;
+        width: 150px;
+        flex-grow: 1;
+      }
+      button {
+        width: 150px;
       }
     }
     table.customTable {
@@ -235,7 +247,7 @@ a {
   display: none;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 900px) {
   body {
     padding: 0;
     position: relative;
@@ -250,7 +262,7 @@ a {
     height: fit-content;
   }
   .navigation__left {
-    border-radius: none;
+    border-radius: 0;
     position: absolute;
     z-index: 1;
     top: 0;

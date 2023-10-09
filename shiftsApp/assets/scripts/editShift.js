@@ -115,7 +115,7 @@ editShiftBtn.addEventListener("click", () => {
     localStorage.setItem("users", JSON.stringify(users));
     alert("Shift updated!");
     window.location.href = "home.html";
-  }, 3000);
+  }, 2000);
 });
 
 // Delete shift button
