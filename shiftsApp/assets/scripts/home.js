@@ -77,7 +77,7 @@ sortedShifts.forEach((shift) => {
 `;
 
   row.addEventListener("click", () => {
-    window.location.href = `editshift.html?shiftId=${shift.name}`;
+    window.location.href = `editShift.html?shiftId=${shift.name}`;
   });
   showShifts.appendChild(row);
 });
@@ -145,7 +145,9 @@ searchShiftsBtn.addEventListener("click", () => {
       <td>${shift.workplace}</td>
       <td>${shift.total} $</td>
     `;
-
+    row.addEventListener("click", () => {
+      window.location.href = `editShift.html?shiftId=${shift.name}`;
+    });
     showShifts.appendChild(row);
   });
 });
