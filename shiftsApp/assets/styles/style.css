@@ -28,7 +28,7 @@ a {
 }
 
 .container {
-  max-width: 1000px;
+  width: 1000px;
   height: 90vh;
   background-color: #4f8fc0;
   border-radius: 8px;

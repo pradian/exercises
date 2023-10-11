@@ -27,7 +27,7 @@ const loggedInUser = users.find((user) => {
 });
 
 //If user is not logged in, redirect to index.html
-if (!loggedInUser) {
+if (!loggedIn) {
   window.location.href = "index.html";
 }
 
@@ -113,17 +113,20 @@ profileEditBtn.addEventListener("click", () => {
 const deleteAccount = document.getElementById("deleteAccount");
 
 deleteAccount.addEventListener("click", () => {
-  console.log("Account deleted");
+  const userIndex = users.findIndex((e) => e.username == loggedInUser);
+  console.log(userIndex);
   const confirmDelete = confirm(
     "Are you sure you want to delete this account?"
   );
+
   if (confirmDelete) {
     if (loggedInUser !== -1) {
-      loggedInUser.splice();
+      users.splice(userIndex, 1);
+      localStorage.setItem("users", JSON.stringify(users));
+      localStorage.removeItem("loggedIn");
+      alert("Account deleted!");
+      window.location.href = "index.html";
     }
-    localStorage.setItem("users", JSON.stringify(users));
-    alert("Account deleted!");
-    window.location.href = "index.html";
   } else {
     alert("Account not deleted!");
     return;
