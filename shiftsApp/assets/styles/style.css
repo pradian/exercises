@@ -220,7 +220,7 @@ a {
   background-color: #7ea8f8;
 }
 .main__shifts table.customTable tfoot {
-  background-color: red;
+  background-color: black;
   color: white;
   font-size: 25px;
   font-weight: 800;

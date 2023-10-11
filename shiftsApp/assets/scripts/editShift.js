@@ -59,6 +59,7 @@ if (shiftToEdit) {
   editShiftName.value = shiftToEdit.name;
   editShiftName.disabled = true;
   editShiftDate.value = shiftToEdit.date.toString().slice(0, 10);
+  editShiftDate.disabled = true;
   editShiftStartTime.value = shiftToEdit.startTime.toString().slice(0, 16);
   editShiftEndTime.value = shiftToEdit.endTime.toString().slice(0, 16);
   editShiftWage.value = shiftToEdit.wage;

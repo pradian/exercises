@@ -45,7 +45,7 @@ editProfile.addEventListener("click", () => {
 class Shift {
   constructor(name, date, startTime, endTime, wage, workplace, notes) {
     this.name = name;
-    this.date = date;
+    this.date = startTime.toString().slice(0, 10);
     this.startTime = startTime;
     this.endTime = endTime;
     this.wage = wage;
@@ -57,7 +57,7 @@ class Shift {
   }
 }
 const addShiftName = document.getElementById("addShiftName");
-const addShiftDate = document.getElementById("addShiftDate");
+// const addShiftDate = document.getElementById("addShiftDate");
 const addShiftStartTime = document.getElementById("addShiftStartTime");
 const addShiftEndTime = document.getElementById("addShiftEndTime");
 const addShiftWage = document.getElementById("addShiftWage");
@@ -89,9 +89,9 @@ addShiftBtn.addEventListener("click", () => {
   ) {
     errors.push("Name already exists");
   }
-  if (!addShiftDate.value) {
-    errors.push("Date is required");
-  }
+  // if (!addShiftDate.value) {
+  //   errors.push("Date is required");
+  // }
   if (!addShiftStartTime.value) {
     errors.push("Start time is required");
   }
@@ -114,7 +114,7 @@ addShiftBtn.addEventListener("click", () => {
   }
   const shift = new Shift(
     addShiftName.value,
-    addShiftDate.value,
+    // addShiftDate.value,
     addShiftStartTime.value,
     addShiftEndTime.value,
     addShiftWage.value,
@@ -122,7 +122,7 @@ addShiftBtn.addEventListener("click", () => {
     addShiftNotes.value
   );
   (addShiftName.disabled = true),
-    (addShiftDate.disabled = true),
+    // (addShiftDate.disabled = true),
     (addShiftStartTime.disabled = true),
     (addShiftEndTime.disabled = true),
     (addShiftWage.disabled = true),
