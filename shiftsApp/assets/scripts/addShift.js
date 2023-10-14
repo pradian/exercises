@@ -43,7 +43,7 @@ editProfile.addEventListener("click", () => {
 
 // Add shift class and variables
 class Shift {
-  constructor(name, date, startTime, endTime, wage, workplace, notes) {
+  constructor(name, startTime, endTime, wage, workplace, notes) {
     this.name = name;
     this.date = startTime.toString().slice(0, 10);
     this.startTime = startTime;
@@ -114,7 +114,6 @@ addShiftBtn.addEventListener("click", () => {
   }
   const shift = new Shift(
     addShiftName.value,
-    // addShiftDate.value,
     addShiftStartTime.value,
     addShiftEndTime.value,
     addShiftWage.value,
@@ -122,7 +121,6 @@ addShiftBtn.addEventListener("click", () => {
     addShiftNotes.value
   );
   (addShiftName.disabled = true),
-    // (addShiftDate.disabled = true),
     (addShiftStartTime.disabled = true),
     (addShiftEndTime.disabled = true),
     (addShiftWage.disabled = true),

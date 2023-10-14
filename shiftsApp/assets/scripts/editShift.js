@@ -58,8 +58,6 @@ const loadingImg = document.getElementById("loadingImg");
 if (shiftToEdit) {
   editShiftName.value = shiftToEdit.name;
   editShiftName.disabled = true;
-  editShiftDate.value = shiftToEdit.date.toString().slice(0, 10);
-  editShiftDate.disabled = true;
   editShiftStartTime.value = shiftToEdit.startTime.toString().slice(0, 16);
   editShiftEndTime.value = shiftToEdit.endTime.toString().slice(0, 16);
   editShiftWage.value = shiftToEdit.wage;
@@ -74,9 +72,6 @@ const editShiftBtn = document.getElementById("editShiftBtn");
 
 editShiftBtn.addEventListener("click", () => {
   let errors = [];
-  if (!editShiftDate.value) {
-    errors.push("Date is required");
-  }
   if (!editShiftStartTime.value) {
     errors.push("Start time is required");
   }
@@ -98,10 +93,16 @@ editShiftBtn.addEventListener("click", () => {
   }
   loadingImg.style.display = "block";
 
+  (editShiftName.disabled = true),
+    (editShiftStartTime.disabled = true),
+    (editShiftEndTime.disabled = true),
+    (editShiftWage.disabled = true),
+    (editShiftWorkplace.disabled = true),
+    (editShiftNotes.disabled = true),
+    (loadingImg.style.display = "block");
   setTimeout(() => {
     if (shiftToEdit !== -1) {
       shiftToEdit.name = editShiftName.value;
-      shiftToEdit.date = new Date(editShiftDate.value);
       shiftToEdit.startTime = new Date(editShiftStartTime.value);
       shiftToEdit.endTime = new Date(editShiftEndTime.value);
       shiftToEdit.wage = editShiftWage.value;

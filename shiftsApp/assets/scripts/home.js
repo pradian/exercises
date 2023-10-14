@@ -64,17 +64,33 @@ sortedShifts.forEach((shift) => {
     day: "numeric",
   })}, ${endTime.getHours()}:${String(endTime.getMinutes()).padStart(2, "0")}`;
   const row = document.createElement("tr");
-  row.innerHTML = `
-  <td>${shift.name}</td>
-  <td>${formattedStartTime}</td>
-  <td>${formattedEndTime}</td>
-  <td>${Math.round(
-    (new Date(shift.endTime) - new Date(shift.startTime)) / 1000 / 60 / 60
-  )} h</td>
-  <td>${shift.wage} $</td>
-  <td>${shift.workplace}</td>
-  <td>${shift.total} $</td></td>
-`;
+  const td1 = document.createElement("td");
+  td1.innerText = shift.name;
+  row.appendChild(td1);
+
+  const td2 = document.createElement("td");
+  td2.innerText = formattedStartTime;
+  row.appendChild(td2);
+
+  const td3 = document.createElement("td");
+  td3.innerText = formattedEndTime;
+  row.appendChild(td3);
+
+  const td4 = document.createElement("td");
+  td4.innerText = `${(endTime - startTime) / 1000 / 60 / 60} h`;
+  row.appendChild(td4);
+
+  const td5 = document.createElement("td");
+  td5.innerText = shift.wage;
+  row.appendChild(td5);
+
+  const td6 = document.createElement("td");
+  td6.innerText = shift.workplace;
+  row.appendChild(td6);
+
+  const td7 = document.createElement("td");
+  td7.innerText = shift.total;
+  row.appendChild(td7);
 
   row.addEventListener("click", () => {
     window.location.href = `editShift.html?shiftId=${shift.name}`;
@@ -136,15 +152,42 @@ searchShiftsBtn.addEventListener("click", () => {
       "0"
     )}`;
     const row = document.createElement("tr");
-    row.innerHTML = `
-      <td>${shift.name}</td>
-      <td>${formattedStartTime}</td>
-      <td>${formattedEndTime}</td>
-      <td>${(endTime - startTime) / 1000 / 60 / 60} h</td>
-      <td>${shift.wage} $</td>
-      <td>${shift.workplace}</td>
-      <td>${shift.total} $</td>
-    `;
+    const td1 = document.createElement("td");
+    td1.innerText = shift.name;
+    row.appendChild(td1);
+
+    const td2 = document.createElement("td");
+    td2.innerText = formattedStartTime;
+    row.appendChild(td2);
+
+    const td3 = document.createElement("td");
+    td3.innerText = formattedEndTime;
+    row.appendChild(td3);
+
+    const td4 = document.createElement("td");
+    td4.innerText = `${(endTime - startTime) / 1000 / 60 / 60} h`;
+    row.appendChild(td4);
+
+    const td5 = document.createElement("td");
+    td5.innerText = shift.wage;
+    row.appendChild(td5);
+
+    const td6 = document.createElement("td");
+    td6.innerText = shift.workplace;
+    row.appendChild(td6);
+
+    const td7 = document.createElement("td");
+    td7.innerText = shift.total;
+    row.appendChild(td7);
+    // row.innerHTML = `
+    //   <td>${shift.name}</td>
+    //   <td>${formattedStartTime}</td>
+    //   <td>${formattedEndTime}</td>
+    //   <td>${(endTime - startTime) / 1000 / 60 / 60} h</td>
+    //   <td>${shift.wage} $</td>
+    //   <td>${shift.workplace}</td>
+    //   <td>${shift.total} $</td>
+    // `;
     row.addEventListener("click", () => {
       window.location.href = `editShift.html?shiftId=${shift.name}`;
     });
