@@ -12,7 +12,7 @@ body {
   height: 100vh;
   display: grid;
   place-items: center;
-  padding: 10px;
+  // padding: 10px;
 }
 button {
   border-radius: 8px;
@@ -29,10 +29,8 @@ a {
 }
 .container {
   width: 100%;
-  height: 90vh;
+  height: 100%;
   background-color: $secundary-color;
-  border-radius: 8px;
-  padding: 5px;
   position: relative;
 }
 .navigation {
@@ -42,7 +40,9 @@ a {
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
-  border-radius: 8px;
+  // margin-top: -3vh;
+
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
   &__left {
     display: flex;
     align-items: center;
@@ -83,7 +83,7 @@ a {
 
 .main {
   width: 100%;
-  height: 95%;
+  height: 93%;
   position: relative;
   // .edit__shift-modal {
   //   width: 400px;
@@ -96,7 +96,7 @@ a {
 
   //   background-color: $forth-color;
   // }
-  img {
+  .loading {
     display: none;
     width: 50px;
     height: 50px;
@@ -125,13 +125,25 @@ a {
       }
     }
   }
+  .forms-center {
+    display: grid;
+    place-items: center;
+    height: 100%;
+  }
   &__registration {
-    height: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    place-self: center;
     align-items: center;
     gap: 10px;
+    border: 1px solid $primary-color;
+    width: 400px;
+    height: 600px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: $primary-color;
+    color: white;
+    font-size: 20px;
     input,
     select {
       height: 30px;
@@ -158,12 +170,31 @@ a {
     }
   }
   &__login {
-    height: 90%;
+    width: 400px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: $primary-color;
+    border: 1px solid $primary-color;
+    color: white;
+    font-size: 20px;
+
+    div {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 10px;
+    }
+    &-inputs {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      gap: 5px;
+    }
     input {
       height: 30px;
       border: $secundary-color;
@@ -176,12 +207,6 @@ a {
     }
     button {
       background-color: $forth-color;
-    }
-    div {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 20px;
     }
   }
   &__shifts {
@@ -242,7 +267,30 @@ a {
     }
   }
 }
-
+.footer {
+  color: white;
+}
+.no-shifts-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  border: 1px solid $primary-color;
+  background-color: $primary-color;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  }
+  img {
+    display: block;
+  }
+}
 .hidden {
   display: none;
 }

@@ -9,7 +9,6 @@ body {
   height: 100vh;
   display: grid;
   place-items: center;
-  padding: 10px;
 }
 
 button {
@@ -29,10 +28,8 @@ a {
 
 .container {
   width: 100%;
-  height: 90vh;
+  height: 100%;
   background-color: #4f8fc0;
-  border-radius: 8px;
-  padding: 5px;
   position: relative;
 }
 
@@ -43,7 +40,7 @@ a {
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
-  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
 }
 .navigation__left {
   display: flex;
@@ -79,10 +76,10 @@ a {
 
 .main {
   width: 100%;
-  height: 95%;
+  height: 93%;
   position: relative;
 }
-.main img {
+.main .loading {
   display: none;
   width: 50px;
   height: 50px;
@@ -111,13 +108,25 @@ a {
 .main__homepage .homepage-login button {
   background-color: #ffe3b3;
 }
+.main .forms-center {
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
 .main__registration {
-  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  place-self: center;
   align-items: center;
   gap: 10px;
+  border: 1px solid hsl(200, 55%, 33%);
+  width: 400px;
+  height: 600px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: hsl(200, 55%, 33%);
+  color: white;
+  font-size: 20px;
 }
 .main__registration input,
 .main__registration select {
@@ -145,12 +154,30 @@ a {
   gap: 10px;
 }
 .main__login {
-  height: 90%;
+  width: 400px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: hsl(200, 55%, 33%);
+  border: 1px solid hsl(200, 55%, 33%);
+  color: white;
+  font-size: 20px;
+}
+.main__login div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.main__login-inputs {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 5px;
 }
 .main__login input {
   height: 30px;
@@ -164,12 +191,6 @@ a {
 }
 .main__login button {
   background-color: #ffe3b3;
-}
-.main__login div {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 20px;
 }
 .main__shifts {
   display: flex;
@@ -224,6 +245,32 @@ a {
   color: white;
   font-size: 25px;
   font-weight: 800;
+}
+
+.footer {
+  color: white;
+}
+
+.no-shifts-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  border: 1px solid hsl(200, 55%, 33%);
+  background-color: hsl(200, 55%, 33%);
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+}
+.no-shifts-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+.no-shifts-card img {
+  display: block;
 }
 
 .hidden {

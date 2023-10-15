@@ -179,15 +179,7 @@ searchShiftsBtn.addEventListener("click", () => {
     const td7 = document.createElement("td");
     td7.innerText = shift.total;
     row.appendChild(td7);
-    // row.innerHTML = `
-    //   <td>${shift.name}</td>
-    //   <td>${formattedStartTime}</td>
-    //   <td>${formattedEndTime}</td>
-    //   <td>${(endTime - startTime) / 1000 / 60 / 60} h</td>
-    //   <td>${shift.wage} $</td>
-    //   <td>${shift.workplace}</td>
-    //   <td>${shift.total} $</td>
-    // `;
+
     row.addEventListener("click", () => {
       window.location.href = `editShift.html?shiftId=${shift.name}`;
     });

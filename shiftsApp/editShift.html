@@ -31,64 +31,71 @@
         </div>
       </div>
       <div class="main">
-        <img src="./assets/images/loading.svg" alt="Loading" id="loadingImg" />
-        <div class="main__registration" id="addShiftForm">
-          <div>
-            <label for="editShiftName">Shift name:</label>
-            <input
-              type="text"
-              placeholder="Enter shift name"
-              id="editShiftName"
-            />
-          </div>
-          <!-- <div>
+        <img
+          src="./assets/images/loading.svg"
+          alt="Loading"
+          id="loadingImg"
+          class="loading"
+        />
+        <div class="forms-center">
+          <div class="main__registration" id="addShiftForm">
+            <div>
+              <label for="editShiftName">Shift name:</label>
+              <input
+                type="text"
+                placeholder="Enter shift name"
+                id="editShiftName"
+              />
+            </div>
+            <!-- <div>
             <label for="editShiftDate">Date:</label>
             <input type="date" placeholder="date" id="editShiftDate" />
           </div> -->
-          <div>
-            <label for="editShiftStartTime">Start shift:</label>
-            <input
-              type="datetime-local"
-              placeholder="Start shift"
-              id="editShiftStartTime"
-            />
-          </div>
-          <div>
-            <label for="editShiftEndTime">End shift:</label>
-            <input
-              type="datetime-local"
-              placeholder="End shift"
-              id="editShiftEndTime"
-            />
-          </div>
-          <div>
-            <label for="editShiftWage">Wage:</label>
-            <input
-              type="number"
-              placeholder="Wage per hour"
-              id="editShiftWage"
-            />
-          </div>
-          <div>
-            <label for="editShiftWorkplace">Workplace:</label>
-            <select name="cars" id="editShiftWorkplace">
-              <option value="Frontend">Frontend</option>
-              <option value="Backend">Backend</option>
-              <option value="Mobile">Mobile</option>
-            </select>
-          </div>
-          <div>
-            <label for="editShiftNotes">Shift notes:</label>
-            <input
-              type="text"
-              placeholder="Enter shift notes"
-              id="editShiftNotes"
-            />
-          </div>
+            <div>
+              <label for="editShiftStartTime">Start shift:</label>
+              <input
+                type="datetime-local"
+                placeholder="Start shift"
+                id="editShiftStartTime"
+              />
+            </div>
+            <div>
+              <label for="editShiftEndTime">End shift:</label>
+              <input
+                type="datetime-local"
+                placeholder="End shift"
+                id="editShiftEndTime"
+              />
+            </div>
+            <div>
+              <label for="editShiftWage">Wage:</label>
+              <input
+                type="number"
+                placeholder="Wage per hour"
+                id="editShiftWage"
+              />
+            </div>
+            <div>
+              <label for="editShiftWorkplace">Workplace:</label>
+              <select name="cars" id="editShiftWorkplace">
+                <option value="Frontend">Frontend</option>
+                <option value="Backend">Backend</option>
+                <option value="Mobile">Mobile</option>
+              </select>
+            </div>
+            <div>
+              <label for="editShiftNotes">Shift notes:</label>
+              <input
+                type="text"
+                placeholder="Enter shift notes"
+                id="editShiftNotes"
+              />
+            </div>
 
-          <div class="registration-buttons">
-            <button id="editShiftBtn">Edit shift</button>
-            <button id="editShiftDeleteBtn">Delete shift</button>
+            <div class="registration-buttons">
+              <button id="editShiftBtn">Edit shift</button>
+              <button id="editShiftDeleteBtn">Delete shift</button>
+            </div>
           </div>
         </div>
       </div>

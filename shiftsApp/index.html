@@ -19,40 +19,33 @@
       <div class="navigation">
         <div class="navigation__left">
           <h1>Shift app</h1>
-<!--           <div class="logged-in hidden" id="loggedIn">
-            <button id="myShits">Shifts</button>
-            <button id="newShift">New shift</button>
-          </div> -->
         </div>
-<!--         <div class="navigation__right hidden">
-          <p id="welcomeUser"></p>
-          <button id="editProfile">Edit profile</button>
-          <button id="logoutBtn">Logout</button>
-        </div> -->
       </div>
       <div class="main">
-        <div class="main__login" id="loginForm">
-          <div>
-            <label for="loginUsername">Username:</label>
-            <input
-              type="text"
-              placeholder="Enter your username"
-              id="loginUsername"
-            />
+        <div class="forms-center">
+          <div class="main__login" id="loginForm">
+            <div class="main__login-inputs">
+              <label for="loginUsername">Username:</label>
+              <input
+                type="text"
+                placeholder="Enter your username"
+                id="loginUsername"
+              />
+            </div>
+            <div class="main__login-inputs">
+              <label for="loginPwd">Password:</label>
+              <input
+                type="password"
+                placeholder="Enter your password"
+                id="loginPwd"
+              />
+            </div>
+            <div>
+              <button id="loginBtn">Login</button>
+              <button id="registrationForm">Register</button>
+            </div>
+            <p>Forgot password? <a id="forgotPwd">Click here</a></p>
           </div>
-          <div>
-            <label for="loginPwd">Password:</label>
-            <input
-              type="password"
-              placeholder="Enter your password"
-              id="loginPwd"
-            />
-          </div>
-          <div>
-            <button id="loginBtn">Login</button>
-            <button id="registrationForm">Register</button>
-          </div>
-          <p>Forgot password? <a id="forgotPwd">Click here</a></p>
         </div>
       </div>
       <div class="footer">
