@@ -81,7 +81,7 @@ sortedShifts.forEach((shift) => {
   row.appendChild(td4);
 
   const td5 = document.createElement("td");
-  td5.innerText = shift.wage;
+  td5.innerText = `${shift.wage} $/h`;
   row.appendChild(td5);
 
   const td6 = document.createElement("td");
@@ -89,7 +89,7 @@ sortedShifts.forEach((shift) => {
   row.appendChild(td6);
 
   const td7 = document.createElement("td");
-  td7.innerText = shift.total;
+  td7.innerText = ` ${shift.total} $`;
   row.appendChild(td7);
 
   row.addEventListener("click", () => {

@@ -12,7 +12,6 @@ body {
 }
 
 button {
-  border-radius: 8px;
   border: none;
   height: 50px;
   font-size: 20px;
@@ -40,7 +39,7 @@ a {
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
 }
 .navigation__left {
   display: flex;
@@ -89,6 +88,14 @@ a {
   left: 50%;
   margin-left: -25px;
 }
+.main .page-name {
+  width: 100%;
+  text-align: center;
+  color: #ffe3b3;
+  margin-bottom: -5px;
+  position: absolute;
+  top: 50px;
+}
 .main__homepage {
   height: 90%;
   margin-top: 40px;
@@ -107,6 +114,7 @@ a {
 }
 .main__homepage .homepage-login button {
   background-color: #ffe3b3;
+  border-radius: 8px;
 }
 .main .forms-center {
   display: grid;
@@ -142,6 +150,7 @@ a {
 }
 .main__registration button {
   background-color: #ffe3b3;
+  border-radius: 8px;
 }
 .main__registration div {
   display: flex;
@@ -180,10 +189,11 @@ a {
   gap: 5px;
 }
 .main__login input {
-  height: 30px;
+  height: 40px;
   border: #4f8fc0;
   width: 300px;
   padding: 5px;
+  margin-top: -4px;
 }
 .main__login input:focus {
   border: 2px solid hsl(200, 55%, 33%);
@@ -191,6 +201,15 @@ a {
 }
 .main__login button {
   background-color: #ffe3b3;
+  border-radius: 8px;
+}
+.main__login a {
+  font-weight: 700;
+  text-decoration: none;
+}
+.main__login a:hover {
+  text-decoration: underline;
+  color: #000000;
 }
 .main__shifts {
   display: flex;
@@ -214,9 +233,16 @@ a {
   padding: 10px;
   width: 150px;
   flex-grow: 1;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .main__shifts .search-shifts button {
   width: 150px;
+  background-color: #7ea8f8;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.main__shifts .search-shifts button:hover {
+  background-color: #ffe3b3;
 }
 .main__shifts table.customTable {
   width: 100%;
@@ -226,6 +252,10 @@ a {
   border-color: #7ea8f8;
   border-style: solid;
   color: #000000;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+}
+.main__shifts table.customTable tbody tr {
+  height: 45px;
 }
 .main__shifts table.customTable td,
 .main__shifts table.customTable th {
@@ -236,9 +266,13 @@ a {
 }
 .main__shifts table.customTable tbody tr:hover {
   background-color: #ffe3b3;
+  cursor: cell;
+}
+.main__shifts table.customTable tbody tr td:is(:last-child) {
+  text-align: right;
 }
 .main__shifts table.customTable thead {
-  background-color: #7ea8f8;
+  background-color: #4f8fc0;
 }
 .main__shifts table.customTable tfoot {
   background-color: black;
@@ -249,6 +283,9 @@ a {
 
 .footer {
   color: white;
+  text-align: center;
+  margin-top: -10px;
+  font-size: 20px;
 }
 
 .no-shifts-card {

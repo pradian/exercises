@@ -113,19 +113,22 @@ profileEditBtn.addEventListener("click", () => {
 const deleteAccount = document.getElementById("deleteAccount");
 
 deleteAccount.addEventListener("click", () => {
-  console.log("Account deleted");
+  const userIndex = users.indexOf(loggedInUser);
+  console.log(userIndex);
   const confirmDelete = confirm(
-    "Are you sure you want to delete this account?"
+    "By deleting your account, you will no longer be able to access your shifts. \n\n Are you sure you want to delete this account?"
   );
   if (confirmDelete) {
     if (loggedInUser !== -1) {
-      loggedInUser.splice();
+      users.splice(userIndex, 1);
+
+      localStorage.setItem("users", JSON.stringify(users));
+      alert("Your account has been deleted!");
+      localStorage.removeItem("loggedIn");
+      window.location.href = "index.html";
+    } else {
+      alert("Your account has not been deleted!");
+      return;
     }
-    localStorage.setItem("users", JSON.stringify(users));
-    alert("Account deleted!");
-    window.location.href = "index.html";
-  } else {
-    alert("Account not deleted!");
-    return;
   }
 });

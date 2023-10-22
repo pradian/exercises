@@ -15,7 +15,7 @@ body {
   // padding: 10px;
 }
 button {
-  border-radius: 8px;
+  // border-radius: 8px;
   border: none;
   height: 50px;
   font-size: 20px;
@@ -42,7 +42,7 @@ a {
   overflow: hidden;
   // margin-top: -3vh;
 
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
   &__left {
     display: flex;
     align-items: center;
@@ -85,17 +85,7 @@ a {
   width: 100%;
   height: 93%;
   position: relative;
-  // .edit__shift-modal {
-  //   width: 400px;
-  //   position: absolute;
-  //   top: 50%;
-  //   margin-top: -360px;
-  //   left: 50%;
-  //   margin-left: -200px;
-  //   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 
-  //   background-color: $forth-color;
-  // }
   .loading {
     display: none;
     width: 50px;
@@ -105,6 +95,14 @@ a {
     margin-top: -25px;
     left: 50%;
     margin-left: -25px;
+  }
+  .page-name {
+    width: 100%;
+    text-align: center;
+    color: $forth-color;
+    margin-bottom: -5px;
+    position: absolute;
+    top: 50px;
   }
   &__homepage {
     height: 90%;
@@ -122,6 +120,7 @@ a {
       gap: 30px;
       button {
         background-color: $forth-color;
+        border-radius: 8px;
       }
     }
   }
@@ -157,6 +156,7 @@ a {
     }
     button {
       background-color: $forth-color;
+      border-radius: 8px;
     }
     div {
       display: flex;
@@ -196,10 +196,11 @@ a {
       gap: 5px;
     }
     input {
-      height: 30px;
+      height: 40px;
       border: $secundary-color;
       width: 300px;
       padding: 5px;
+      margin-top: -4px;
       &:focus {
         border: 2px solid $primary-color;
         outline: none;
@@ -207,6 +208,15 @@ a {
     }
     button {
       background-color: $forth-color;
+      border-radius: 8px;
+    }
+    a {
+      font-weight: 700;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+        color: #000000;
+      }
     }
   }
   &__shifts {
@@ -230,9 +240,16 @@ a {
         padding: 10px;
         width: 150px;
         flex-grow: 1;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       }
       button {
         width: 150px;
+        background-color: #7ea8f8;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        &:hover {
+          background-color: $forth-color;
+        }
       }
     }
     table.customTable {
@@ -243,8 +260,12 @@ a {
       border-color: #7ea8f8;
       border-style: solid;
       color: #000000;
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+        rgb(209, 213, 219) 0px 0px 0px 1px inset;
     }
-
+    table.customTable tbody tr {
+      height: 45px;
+    }
     table.customTable td,
     table.customTable th {
       border-width: 2px;
@@ -253,11 +274,15 @@ a {
       padding: 5px;
     }
     table.customTable tbody tr:hover {
-      background-color: #ffe3b3;
+      background-color: $forth-color;
+      cursor: cell;
+    }
+    table.customTable tbody tr td:is(:last-child) {
+      text-align: right;
     }
 
     table.customTable thead {
-      background-color: #7ea8f8;
+      background-color: $secundary-color;
     }
     table.customTable tfoot {
       background-color: black;
@@ -269,6 +294,9 @@ a {
 }
 .footer {
   color: white;
+  text-align: center;
+  margin-top: -10px;
+  font-size: 20px;
 }
 .no-shifts-card {
   display: flex;
