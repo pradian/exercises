@@ -103,6 +103,7 @@ editShiftBtn.addEventListener("click", () => {
   setTimeout(() => {
     if (shiftToEdit !== -1) {
       shiftToEdit.name = editShiftName.value;
+      shiftToEdit.date = new Date(editShiftStartTime.value);
       shiftToEdit.startTime = new Date(editShiftStartTime.value);
       shiftToEdit.endTime = new Date(editShiftEndTime.value);
       shiftToEdit.wage = editShiftWage.value;
